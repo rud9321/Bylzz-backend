@@ -21,15 +21,18 @@ exports.getproductbyidTasks2 = productPriceController.getByParams.bind(productPr
 
 exports.getppbyidTasks2 = async (req, res) => {
   try {
-    const { selectSubQuantityTypeID, SelectProductId, selectcategoryID, selectQtypeID } = req.params;
-    
-    const item = await ProductPrice.findOne({
-      $and: [
-        { SelectProductId: SelectProductId },
-        { selectcategoryID: selectcategoryID },
-        { selectQtypeID: selectQtypeID },
-        { selectSubQuantityTypeID: selectSubQuantityTypeID }
-      ]
+    // console.log(req.params);
+    // const {SelectProductId, selectSubQuantityTypeID, selectQtypeID , selectcategoryID } = req.params;
+    // console.log(SelectProductId);
+    const item = await ProductPrice.find({
+      // $and: [
+      //   { SelectProductId: SelectProductId },
+      //   { selectSubQuantityTypeID: selectSubQuantityTypeID },
+      //   { selectQtypeID: selectQtypeID },
+      //   { selectcategoryID: selectcategoryID }       
+        
+      // ]
+      $and: [req.params]
     });
     
     if (!item) {

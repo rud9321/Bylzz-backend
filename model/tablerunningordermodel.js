@@ -7,6 +7,7 @@ const tableRunningOrderFields = {
     type: Object
   },
   tablename: BaseSchema.createStringField(false, 50),
+  receiptnumber: BaseSchema.createStringField(false, 70),
   tokennumber: BaseSchema.createNumberField(false)
 };
 

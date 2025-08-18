@@ -5,9 +5,9 @@ chairsrunningorderrouter
   .post('/', chairsrunningordercontroller.createchairsrunningorderTask)
   // .get('/', invoicecontroller.getinvoiceTask)
   // // .get('/:RecieptNumber', invoicecontroller.getinvoicebyidTasks)
-   .get('/:createdAt', chairsrunningordercontroller.getcreatechairsrunningorderbyidTasks)
+   .get('/:receiptnumber', chairsrunningordercontroller.getcreatechairsrunningorderbyidTasks)
   .get('/', chairsrunningordercontroller.getcreatechairsrunningorderTask)
-  .delete('/:createdAt', chairsrunningordercontroller.deletechairsrunningordereTasks)
+  .delete('/:receiptnumber', chairsrunningordercontroller.deletechairsrunningordereTasks)
   //.get('/:endDateTime', chairsrunningordercontroller.getcreatechairsrunningorderTask)
 module.exports = chairsrunningorderrouter
 

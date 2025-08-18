@@ -54,15 +54,15 @@ class BaseController {
 
   async update(req, res) {
     try {
-      const { id } = req.params;
+      const { _id } = req.params;
       const updateData = req.body;
       
-      if (!id || !updateData) {
+      if (!_id || !updateData) {
         return ResponseHandler.badRequest(res, 'Missing id or update data');
       }
       
       const result = await this.model.findByIdAndUpdate(
-        id, 
+        _id, 
         updateData, 
         { new: true, runValidators: true }
       );
@@ -79,8 +79,8 @@ class BaseController {
 
   async delete(req, res) {
     try {
-      const { id } = req.params;
-      const result = await this.model.findByIdAndDelete(id);
+      const { _id } = req.params;
+      const result = await this.model.findByIdAndDelete(_id);
       
       if (!result) {
         return ResponseHandler.notFound(res, 'Item not found');
@@ -108,15 +108,15 @@ class BaseController {
 
   async updateOne(req, res) {
     try {
-      const { id } = req.params;
+      const { _id } = req.params;
       const updateData = req.body;
       
-      if (!id || !updateData) {
+      if (!_id || !updateData) {
         return ResponseHandler.badRequest(res, 'Missing id or update data');
       }
       
       const result = await this.model.updateOne(
-        { _id: id }, 
+        { _id: _id }, 
         updateData
       );
       

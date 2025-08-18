@@ -15,10 +15,10 @@ exports.getcreatechairsrunningorderbyidTasks = chairsRunningOrderController.getB
 
 exports.getcreatechairsrunningorderbydateTasks2 = async (req, res) => {
   try {
-    const { createdAt } = req.params;
+    const { receiptnumber } = req.params;
     
     const results = await ChairsRunningOrder.find({
-      createdAt: { createdAt }
+      receiptnumber: { receiptnumber }
     });
     
     return ResponseHandler.success(res, results);
