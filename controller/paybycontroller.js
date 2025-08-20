@@ -13,9 +13,10 @@ exports.deleteTasks = payByController.deleteOne.bind(payByController);
 exports.updateTasks = async (req, res) => {
   try {
     const taskData = req.body;
-    const { _id } = taskData.productcategory;
+
+    const { _id } = taskData.paybymanage;
     
-    if (!_id || !taskData.productcategory) {
+    if (!_id || !taskData.paybymanage) {
       return ResponseHandler.badRequest(res, 'Missing id or update data');
     }
     
