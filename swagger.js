@@ -137,6 +137,16 @@ const options = {
             description: { type: 'string', description: 'Tax description' }
           }
         },
+        addOnProducts: {
+          type: 'object',
+          properties: {
+            _id: { type: 'string', description: 'AddOnProduct ID' },
+            Name: { type: 'string', description: 'AddOnProduct name' },
+            Price: { type: 'number', description: 'AddOnProduct Price' },
+            description: { type: 'string', description: 'AddOnProduct description' },
+            selectProductId: { type: 'string', description: 'Tax description' }
+          }
+        },
         User: {
           type: 'object',
           properties: {

@@ -6,6 +6,7 @@ class BaseController {
   }
 
   async create(req, res) {
+    console.log(req.body);
     try {
       const data = req.body;
       const createdItem = await this.model.create(data);
@@ -42,8 +43,26 @@ class BaseController {
       return ResponseHandler.internalError(res, error);
     }
   }
+async getByMobileNumber(req, res)
+{
+  console.log(req.params);
+  try{
+    const item = await this.model.find(req.params);
+      
+    if (!item) {
+      return ResponseHandler.notFound(res, 'Item not found');
+    }
+    
+    return ResponseHandler.success(res, item);
+  }
+  catch(error)
+  {
+    return ResponseHandler.internalError(res, error);
+  }
+}
 
   async getByParams(req, res) {
+    console.log(req.params);
     try {
       const items = await this.model.find(req.params);
       return ResponseHandler.success(res, items);

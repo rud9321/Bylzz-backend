@@ -89,8 +89,8 @@ customersRouter.get('/', customersController.getcustomersTask)
  *       500:
  *         description: Internal server error
  */
-customersRouter.get('/:_id', customersController.getcustomersbyidTasks)
 
+customersRouter.get('/:_id', customersController.getcustomersbyidTasks)
 /**
  * @swagger
  * /customers/{_id}:

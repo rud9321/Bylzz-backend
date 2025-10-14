@@ -3,7 +3,7 @@ const ModelFactory = require('../utils/modelFactory');
 
 // Define schema fields using BaseSchema utilities
 const payByManageFields = {
-  Paybyname: BaseSchema.createStringField(true, 50),
+  name: BaseSchema.createStringField(true, 50),
   desc: BaseSchema.createStringField(false, 300)
 };
 

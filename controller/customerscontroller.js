@@ -4,6 +4,7 @@ const BaseController = require('../utils/baseController');
 const ResponseHandler = require('../utils/responseHandler');
 
 const customerController = new BaseController(Customer);
+const customersByMobileNumberController = new  BaseController(Customer);
 
 exports.createcustomersTask = customerController.create.bind(customerController);
 
@@ -13,37 +14,38 @@ exports.deletecustomersTasks = customerController.deleteOne.bind(customerControl
 
 exports.getcustomersbyidTasks = customerController.getByParams.bind(customerController);
 
-exports.getcustomersbyidTasks2 = async (req, res) => {
-  try {
-    const { _id } = req.params;
-    const customer = await Customer.findOne({
-      $and: [
-        { _id: _id }
-      ]
-    });
+exports.getcustomersbyidMobileNumber = customersByMobileNumberController.getByMobileNumber.bind(customerController);
+
+// exports.getcustomersbyidMobileNumber = async (req, res) => {
+//   console.log(req.params);
+//   try {
+//     const { MobileNo } = req.params;
     
-    if (!customer) {
-      return ResponseHandler.notFound(res, 'Customer not found');
-    }
+//     const customer = await Customer.findOne(req.params);
     
-    return ResponseHandler.success(res, customer);
-  } catch (error) {
-    return ResponseHandler.internalError(res, error);
-  }
-};
+//     if (!customer) {
+//       return ResponseHandler.notFound(res, 'Customer not found');
+//     }
+    
+//     return ResponseHandler.success(res, customer);
+//   } catch (error) {
+//     return ResponseHandler.internalError(res, error);
+//   }
+// };
 
 exports.updatecustomers = async (req, res) => {
+  console.log(req.body);
   try {
     const taskData = req.body;
-    const { _id } = taskData.cutomer;
+    const { _id } = taskData.customer;
     
-    if (!_id || !taskData) {
+    if (!_id || !taskData.customer) {
       return ResponseHandler.badRequest(res, 'Missing id or update data');
     }
     
     const result = await Customer.updateOne(
       { _id: _id }, 
-      taskData.cutomer
+      taskData.customer
     );
     
     if (result.matchedCount === 0) {

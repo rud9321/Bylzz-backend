@@ -3,6 +3,7 @@ const ModelFactory = require('../utils/modelFactory');
 
 // Define schema fields using BaseSchema utilities
 const chairFields = {
+  name: BaseSchema.createStringField(false, 50),
   description: BaseSchema.createStringField(false, 300),
   status: BaseSchema.createBooleanField(false),
   table_id: BaseSchema.createStringField(false, 300),

@@ -3,7 +3,7 @@ const ModelFactory = require('../utils/modelFactory');
 
 // Define schema fields using BaseSchema utilities
 const customerFields = {
-  Name: BaseSchema.createStringField(false, 50),
+  name: BaseSchema.createStringField(false, 50),
   MobileNo: BaseSchema.createStringField(false, 20),
   DOB: BaseSchema.createStringField(false, 20),
   tag: BaseSchema.createStringField(false, 20),

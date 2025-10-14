@@ -3,7 +3,7 @@ const ModelFactory = require('../utils/modelFactory');
 
 // Define schema fields using BaseSchema utilities
 const productFields = {
-  Productname: BaseSchema.createStringField(true, 50),
+  name: BaseSchema.createStringField(true, 50),
   Productdesc: BaseSchema.createStringField(false, 300),
   selectcategoryID: BaseSchema.createStringField(true, 50),
   selectQtypeID: BaseSchema.createStringField(true, 50),

@@ -9,6 +9,7 @@ const invoiceFields = {
   Chairs: {
     type: Object
   },
+  AddOnItems:{type:Object},
   DiscountId: BaseSchema.createStringField(false, 50),
   Discountvalue: BaseSchema.createNumberField(false),
   Discountperstage: BaseSchema.createNumberField(false),
