@@ -127,8 +127,12 @@ const User = require('./router/userRouter')
 const quantityTypeNameRouter = require('./router/getQuantityTypeNameRoutes')
 const getReserveDineByDateTimeRouter = require('./router/getReserveDinebyDateTimeRouter')
 const getaddAddOnProductRouter = require('./router/addOnProductRouter')
+const getKOTrunningRouterRouter = require('./router/KOTrunningRouter')
+const getKOTsUDRouterRouter = require('./router/KOTsUPsRouter')
 
 
+app.use('/KOTrunning', getKOTrunningRouterRouter)
+app.use('/KOTsUPs', getKOTsUDRouterRouter)
 app.use('/addAddOnProduct', getaddAddOnProductRouter)
 app.use('/getReserveDineByDateTime', getReserveDineByDateTimeRouter)
 app.use('/subQuantityTypeName', subQuantityTypeByName)

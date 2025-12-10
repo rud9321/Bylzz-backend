@@ -10,6 +10,30 @@ exports.getTasks = payByController.getAll.bind(payByController);
 
 exports.deleteTasks = payByController.deleteOne.bind(payByController);
 
+exports.updateByPayByIdTask = async (req, res) => {
+  try {
+    const { _id } = req.body;
+
+    let result;
+    if (_id) {
+      // No _id provided: unset makeMeDefault for all
+      await PayBy.updateMany({}, { $set: { makeMeDefault: false } });
+    result = await PayBy.updateOne({ _id }, { $set: { makeMeDefault: true } });
+    }
+
+    // _id provided: unset makeMeDefault for all, then set for target _id
+   
+
+    if (result.matchedCount === 0) {
+      return ResponseHandler.notFound(res, 'PayBy document not found');
+    }
+    return ResponseHandler.updated(res, result);
+  } catch (error) {
+    return ResponseHandler.internalError(res, error);
+  }
+};
+
+
 exports.updateTasks = async (req, res) => {
   try {
     const taskData = req.body;

@@ -8,4 +8,5 @@ router
   .get('/', controller.getTasks)
   .delete('/:_id',controller.deleteTasks)
   .put('/',controller.updateTasks)
+  .put('/:_id',controller.updateByPayByIdTask)
 module.exports = router

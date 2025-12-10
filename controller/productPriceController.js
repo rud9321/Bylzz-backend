@@ -19,6 +19,8 @@ exports.getppbyQtypeidTasks = productPriceController.getByParams.bind(productPri
 
 exports.getproductbyidTasks2 = productPriceController.getByParams.bind(productPriceController);
 
+exports.getProductPriceByShortcode = productPriceController.getByParams.bind(productPriceController);
+
 exports.getppbyidTasks2 = async (req, res) => {
   try {
     // console.log(req.params);

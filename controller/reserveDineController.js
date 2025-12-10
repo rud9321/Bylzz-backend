@@ -52,21 +52,21 @@ exports.getreservedinebyStartTimeAndEndTimeTasks = async (req, res) => {
 };
 
 exports.updatereservedine = async (req, res) => {
-  
+  // const taskData = req.body;
+  //   const { _id } = taskData;
+  //   console.log(taskData);
   try {
-    // const taskData = req.body;
-    // const { _id } = taskData.reservedine;
-    // console.log(taskData);
+    
     const taskData = req.body;
-    const { _id } = taskData.ReserveDine_;
+    const { _id } = taskData;
    
-    if (!_id || !taskData.ReserveDine_) {
+    if (!_id || !taskData) {
       return ResponseHandler.badRequest(res, 'Missing id or update data');
     }
     
     const result = await ReserveDine.updateOne(
       { _id: _id }, 
-      taskData.ReserveDine_
+      taskData
     );
     
     if (result.matchedCount === 0) {

@@ -5,6 +5,8 @@ productPriceRouter
   .post('/', productPriceController.createppTask)
   .get('/', productPriceController.getppTask)
   .get('/:selectcategoryID', productPriceController.getppbyidTasks)
+  .get('/:ShortCodeNumber', productPriceController.getProductPriceByShortcode)
+  .get('/:ShortCodeString', productPriceController.getProductPriceByShortcode)
   //.get('/:selectSubQuantityTypeID', productPriceController.getppbyidTasks2)
   .get('/:SelectProductId', productPriceController.getproductbyidTasks2)
   //.get('/:selectQtypeID', ppcontroller.getppbyidTasks3)

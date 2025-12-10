@@ -4,8 +4,8 @@ const ModelFactory = require('../utils/modelFactory');
 // Define schema fields using BaseSchema utilities
 const reservedTableFields = {
   TableId: BaseSchema.createStringField(false, 100),
-  DateTimeStart: BaseSchema.createStringField(false),
-  DateTimeEnd: BaseSchema.createStringField(false),
+  ReservedDate: BaseSchema.createStringField(false),
+  ReservedTimeSlot: BaseSchema.createStringField(false),
   CustomerId: BaseSchema.createStringField(false, 100),
   Name: BaseSchema.createStringField(false, 50),
   MobileNo: BaseSchema.createStringField(false, 20),

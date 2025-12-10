@@ -4,7 +4,8 @@ const ModelFactory = require('../utils/modelFactory');
 // Define schema fields using BaseSchema utilities
 const payByManageFields = {
   name: BaseSchema.createStringField(true, 50),
-  desc: BaseSchema.createStringField(false, 300)
+  desc: BaseSchema.createStringField(false, 300),
+  makeMeDefault: BaseSchema.createBooleanField(false)
 };
 
 // Create the model using ModelFactory with new collection name

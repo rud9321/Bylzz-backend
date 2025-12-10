@@ -8,6 +8,9 @@ const productPriceFields = {
   selectcategoryID: BaseSchema.createStringField(true, 50),
   selectQtypeID: BaseSchema.createStringField(true, 50),
   selectSubQuantityTypeID: BaseSchema.createStringField(true, 50),
+  ShortCodeNumber: BaseSchema.createNumberField(true),
+  ShortCodeString: BaseSchema.createStringField(true, 50),
+  mostSelling: BaseSchema.createBooleanField(true),
   employee_id: BaseSchema.createStringField(false, 50)
 };
 

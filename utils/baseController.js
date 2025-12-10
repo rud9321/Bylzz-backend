@@ -9,15 +9,17 @@ class BaseController {
     console.log(req.body);
     try {
       const data = req.body;
+      console.log(data);
       const createdItem = await this.model.create(data);
-      
+      console.log(createdItem);
       if (!createdItem) {
         return ResponseHandler.notFound(res, 'Creation failed');
       }
       
       return ResponseHandler.created(res, createdItem);
     } catch (error) {
-      return ResponseHandler.internalError(res, error);
+       return ResponseHandler.internalError(res, error);
+     // console.error( error);
     }
   }
 
