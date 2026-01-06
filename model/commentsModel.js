@@ -3,8 +3,10 @@ const ModelFactory = require('../utils/modelFactory');
 
 // Define schema fields using BaseSchema utilities
 const commentFields = {
+  CommentType:BaseSchema.createStringField(false, 50),
   RecieptNumber: BaseSchema.createStringField(true, 50),
-  Comment: BaseSchema.createStringField(false, 300)
+  Comment: BaseSchema.createStringField(false, 300),
+  
 };
 
 // Create the model using ModelFactory with new collection name

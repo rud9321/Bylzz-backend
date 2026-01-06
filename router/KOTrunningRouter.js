@@ -3,8 +3,9 @@ const KOTrunningRouter = require("express")
 const KOTrunningRouterController = require('../controller/KOTrunningController')
 KOTrunningRouter
   .post('/', KOTrunningRouterController.createKOTrunningOrderTask)
-   .get('/:Receiptnumber', KOTrunningRouterController.getKOTrunningOrderbyRecieptTasks)
+   .get('/:RecieptNumber', KOTrunningRouterController.getKOTrunningOrderbyRecieptTasks)
   .get('/', KOTrunningRouterController.getcreateKOTrunningOrderTask)
-//   .delete('/:receiptnumber', KOTrunningRouterController.deleteKOTrunningOrdereTasks)
+  .put('/', KOTrunningRouterController.updateKOTrunningOrder)
+   .delete('/:RecieptNumber', KOTrunningRouterController.deleteKOTrunningOrdereTasks)
 module.exports = KOTrunningRouter
 

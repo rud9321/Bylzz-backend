@@ -17,10 +17,10 @@ exports.getcreateKOTsUDsbyidTasks = KOTsUDsController.getByParams.bind(KOTsUDsCo
 
 exports.getKOTsUDsbyRecieptTasks = async (req, res) => {
   try {
-    const { receiptnumber } = req.params;
+    const { RecieptNumber } = req.params;
     
     const results = await KOTsUDs.find({
-      receiptnumber: { receiptnumber }
+      RecieptNumber: { RecieptNumber }
     });
     
     return ResponseHandler.success(res, results);

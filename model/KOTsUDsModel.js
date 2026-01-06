@@ -8,7 +8,9 @@ const KOTsUDFields = {
     KOTsUD: {
     type: Object
   },
-  RecieptNumber: BaseSchema.createStringField(true, 70)
+  RecieptNumber: BaseSchema.createStringField(true, 70),
+  deletedAt:Date,
+  CommentId: BaseSchema.createStringField(false, 70),
 };
 
 // Create the model using ModelFactory with new collection name
