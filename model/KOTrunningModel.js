@@ -8,7 +8,9 @@ const KOTRunningOrderFields = {
   },
   RecieptNumber: BaseSchema.createStringField(true, 70),
   createdAt:Date,
+  ItemsID: BaseSchema.createStringField(true, 100),
   TableId: BaseSchema.createStringField(true, 70),
+  Comment:BaseSchema.createStringField(false, 300),
   EmployeeId:BaseSchema.createStringField(true, 70),
   KOTStatus:BaseSchema.createStringField(true, 20),
 };

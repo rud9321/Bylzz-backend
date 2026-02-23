@@ -5,9 +5,12 @@ const ModelFactory = require('../utils/modelFactory');
 const itemFields = {
  
   RecieptNumber: BaseSchema.createStringField(true, 100),
+  EmployeeId: BaseSchema.createStringField(true, 100),
+  TableId: BaseSchema.createStringField(true, 100),
   Items: {
     type: Object
   },
+  Comment: BaseSchema.createStringField(false, 100)
   // Productid: BaseSchema.createStringField(true, 100),
   // Productname: BaseSchema.createStringField(true, 300),
   // SubQuantityTypeID: BaseSchema.createStringField(true, 100),

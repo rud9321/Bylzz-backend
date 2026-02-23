@@ -14,17 +14,18 @@ exports.getiitembyidTasks = itemController.getByParams.bind(itemController);
 exports.deleteItemsTasks = itemController.deleteOne.bind(itemController);
 
 exports.updateitems = async (req, res) => {
+ 
   try {
     const taskData = req.body;
-    const { Invoiceid } = taskData.items[0];
-    const { Productid } = taskData.items[0];
-    const { SubQuantityTypeName } = taskData.items[0];
+    const { _id } = taskData.items[0];
+    // const { RecieptNumber } = taskData.items;
+    // const { Productid } = taskData.items[0];
+    // const { SubQuantityTypeName } = taskData.items[0];
     
     const result = await Item.updateOne(
       {
-        Invoiceid: Invoiceid,
-        Productid: Productid,
-        SubQuantityTypeName: SubQuantityTypeName
+        _id:_id
+       
       },
       taskData.items[0]
     );

@@ -12,6 +12,7 @@ exports.getinvoiceTask = invoiceController.getAll.bind(invoiceController);
 exports.getinvoicebyidTasks = invoiceController.getByParams.bind(invoiceController);
 
 exports.updateinvoice = async (req, res) => {
+  
   try {
     const taskData = req.body;
     const { RecieptNumber } = taskData.invoice;

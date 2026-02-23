@@ -7,5 +7,6 @@ KOTrunningRouter
   .get('/', KOTrunningRouterController.getcreateKOTrunningOrderTask)
   .put('/', KOTrunningRouterController.updateKOTrunningOrder)
    .delete('/:RecieptNumber', KOTrunningRouterController.deleteKOTrunningOrdereTasks)
+   .delete('/:KOTStatus/:RecieptNumber', KOTrunningRouterController.deleteMultipleKOTrunningOrdereTasks)
 module.exports = KOTrunningRouter
 

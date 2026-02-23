@@ -132,8 +132,9 @@ const getKOTsUDRouterRouter = require('./router/KOTsUPsRouter')
 const getcommnetRouter = require('./router/commnetRouter')
 const getPaymentRouter = require('./router/paybymanagerouter')
 const getDiscountRouter = require('./router/discountRouter')
+const getSplitBillRouter = require('./router/splitbillRouter')
 
-
+app.use('/splitbill', getSplitBillRouter)
 app.use('/discount', getDiscountRouter)
 app.use('/payment', getPaymentRouter)
 app.use('/comment', getcommnetRouter)

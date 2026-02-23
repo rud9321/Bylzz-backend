@@ -5,9 +5,7 @@ const ModelFactory = require('../utils/modelFactory');
 
 // Define schema fields using BaseSchema utilities
 const KOTsUDFields = {
-    KOTsUD: {
-    type: Object
-  },
+  ItemsID:BaseSchema.createStringField(true, 100),
   RecieptNumber: BaseSchema.createStringField(true, 70),
   deletedAt:Date,
   CommentId: BaseSchema.createStringField(false, 70),

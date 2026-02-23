@@ -20,7 +20,7 @@ exports.getAddOnProductbyQtypeidTasks = addOnProductController.getByParams.bind(
 exports.getAddOnProductbyidTasks2 = addOnProductController.getByParams.bind(addOnProductController);
 
 exports.getAddOnProductbyidTasks2 = async (req, res) => {
-  console.log(req.params)
+ 
   try {
     // console.log(req.params);
     // const {SelectProductId, selectSubQuantityTypeID, selectQtypeID , selectcategoryID } = req.params;

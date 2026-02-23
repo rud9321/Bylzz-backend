@@ -13,6 +13,7 @@ exports.getbyidTasks = dineController.getByParams.bind(dineController);
 exports.deleteTasks = dineController.deleteOne.bind(dineController);
 
 exports.updateTasks = async (req, res) => {
+  console.log(req.body);
   try {
     const taskData = req.body;
     const { _id } = taskData.dine;

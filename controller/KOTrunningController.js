@@ -16,21 +16,21 @@ exports.deleteKOTrunningOrdereTasks = KOTrunningController.deleteOne.bind(KOTrun
 exports.getcreateKOTrunningOrderbyidTasks = KOTrunningController.getByParams.bind(KOTrunningController);
 
 exports.updateKOTrunningOrder = async (req, res) => {
-  console.log(req.body);
+  
   try {
     const taskData = req.body;
     // Assuming taskData contains key fields to match the record to update
     // and the updated fields to set in the record
 
     // You may need to adjust the following fields according to your schema
-    const { RecieptNumber } = taskData.GenratedItemKOT;
+    const { _id } = taskData.GenratedItemKOT;
 
-    if (!RecieptNumber) { 
-      return ResponseHandler.badRequest(res, 'RecieptNumber is required');
+    if (!_id) { 
+      return ResponseHandler.badRequest(res, '_id is required');
     }
 
     const result = await KOTrunningOrder.updateOne(
-      { RecieptNumber: RecieptNumber },
+      { _id: _id },
       taskData.GenratedItemKOT
     );
 
@@ -42,7 +42,7 @@ exports.updateKOTrunningOrder = async (req, res) => {
       return ResponseHandler.success(res, null, 'No changes made');
     }
 
-    return ResponseHandler.updated(res, { RecieptNumber });
+    return ResponseHandler.updated(res, { _id });
   } catch (error) {
     return ResponseHandler.internalError(res, error);
   }
@@ -62,6 +62,19 @@ exports.getKOTrunningOrderbyRecieptTasks = async (req, res) => {
   }
 };
 
+exports.deleteMultipleKOTrunningOrdereTasks = async (req, res) => {
+ // console.log(req.body);
+  try {
+    const { RecieptNumber } = req.params; 
+  
+    const results = await KOTrunningOrder.deleteMany({ RecieptNumber });
+  
+    return ResponseHandler.success(res, results);
+  } catch (error) {
+    return ResponseHandler.internalError(res, error);
+  }
+  
+};
  
 
   

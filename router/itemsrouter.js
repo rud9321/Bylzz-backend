@@ -143,6 +143,6 @@ itemsRouter.put('/', itemsController.updateitems)
  *       500:
  *         description: Internal server error
  */
-itemsRouter.delete('/:Invoiceid/:Productid/:SubQuantityTypeID', itemsController.deleteItemsTasks)
+itemsRouter.delete('/:Invoiceid/:Productid/:SubQuantityTypeID/:_id', itemsController.deleteItemsTasks)
 
 module.exports = itemsRouter
